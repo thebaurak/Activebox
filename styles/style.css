@@ -171,7 +171,6 @@ h1,h2,h3,h4,h5,h6 {
 .features__item {
 	width: 33.33333%;
 	text-align: center;
-	max-width: 330px;
 	padding: 0 30px;
 	margin: 25px 0;
 }
