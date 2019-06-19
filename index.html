@@ -4,11 +4,16 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="description" content="Activebox">
 	<title>Document</title>
 	<link rel="stylesheet" href="styles/reset.css">
 	<link rel="stylesheet" href="styles/style.css">
 	<link rel="stylesheet" href="styles/fonts.css">
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700|Raleway:300,400,600,700&display=swap" rel="stylesheet"> 
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700|Raleway:300,400,600,700&display=swap" rel="stylesheet">
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
 </head>
 <body>
 
@@ -34,21 +39,21 @@
 	</svg>
 
 	<!-- Header================ -->
-	<header class="header">
+	<header class="header" id="header">
 		<div class="container">
 			<div class="active__box">
 				<div class="header__logo">
 					<a href="#"><h2>Active <b>Box</b></h2></a>
 				</div>	
-				<nav class="nav">
-					<a class="nav__link" href="#">Featuresm</a>
-					<a class="nav__link" href="#">Words</a>
-					<a class="nav__link" href="#">Help</a>
-					<a class="nav__link" href="#">our team</a>
-					<a class="nav__link" href="#">download</a>
+				<nav class="nav" id="nav">
+					<a class="nav__link" href="#" data-scroll="#features">Featuresm</a>
+					<a class="nav__link" href="#" data-scroll="#works">Works</a>
+					<a class="nav__link" href="#" data-scroll="#team">Our Team</a>
+					<a class="nav__link" href="#" data-scroll="#review">Testimonials</a>
+					<a class="nav__link" href="#" data-scroll="#download">download</a>
 				</nav>
 
-				<button class="burger">
+				<button class="burger" id="navToggle">
 					<span class="burger__item">Menu</span>
 				</button>
 			</div>	
@@ -57,7 +62,7 @@
 
 	<!-- Intro=============== -->
 	
-	<div class="intro">
+	<div class="intro" id="intro">
 		<div class="container">
 			<div class="intro__inner">
 				<h1 class="intro__title">youur favorite one page multi purpemplate</h1>
@@ -69,7 +74,7 @@
 
 	<!-- Features ============ -->
 	<div class="container">
-		<div class="features">
+		<div class="features" id="features">
 			<div class="features__item">
 				<img src="uploads-html/images/bennefits-block/icon1.png" alt="#" class="features__icon">
 				<h4 class="features__title">Easily Customised</h4>
@@ -104,7 +109,7 @@
 	</div> <!-- container=============== -->
 
 	<!-- Works -->
-	<div class="works">
+	<div class="works" id="works">
 		<div class="works__item">
 			<img class="works__photo" src="uploads-html/images/work-block/work1.jpg" alt="#">
 			<div class="works__content">
@@ -163,7 +168,10 @@
 		</div>
 	</div> <!--Works-->
 
-	<div class="team">
+
+	<!-- Team ========= -->
+
+	<div class="team" id="team">
 		<div class="container">
 			<div class="team__inner">
 				<div class="team__item">
@@ -271,21 +279,40 @@
 	</div> <!--Team-->
 
 	<!--Testimonials  -->
-	<div class="review">
+	<div class="review" id="review">
 		<div class="container">
-			<div class="reviews__item">
-				<div class="reviews__photo">
-					<img class="reviews__img"src="uploads-html/images/222.jpg" alt="#">
-				</div>
-				<div class="reviews__content">
-					<div class="reviews__text">
-							“Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Donec sed odio dui. Aenean eu leo quam...”
+			<div class="reviews__slider" id="reviewsSlider">
+				<div class="slick-item">
+					<div class="reviews__item">
+						<div class="reviews__photo">
+							<img class="reviews__img"src="uploads-html/images/222.jpg" alt="#">
+						</div>
+						<div class="reviews__content">
+							<div class="reviews__text">
+									“Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Donec sed odio dui. Aenean eu leo quam...”
+							</div>
+							<div class="reviews__author">
+								susan sims, interaction Designer
+							</div>
+						</div>
 					</div>
-					<div class="reviews__author">
-						susan sims, interaction Designer
+				</div>
+				<div class="slick-item">
+					<div class="reviews__item">
+						<div class="reviews__photo">
+							<img class="reviews__img"src="uploads-html/images/222.jpg" alt="#">
+						</div>
+						<div class="reviews__content">
+							<div class="reviews__text">
+								Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda voluptatem ad temporibus quod quis impedit! Ipsum necessitatibus impedit id voluptas?
+							</div>
+							<div class="reviews__author">
+								susan sims, interaction Designer
+							</div>
+						</div>	
 					</div>
 				</div>
-			</div>
+			</div>	
 		</div>
 	</div> <!--review-->
 
@@ -293,7 +320,7 @@
 	<!-- Download -->
 
 
-	<div class="download">
+	<div class="download" id="download">
 		<div class="container">
 			<h3 class="download__title">Are you ready to start ? download now for free</h3>
 			<div class="download__text">
@@ -305,7 +332,7 @@
 
 	<!-- Footer -->
 
-	<footer class="footer">
+	<footer class="footer" id="copyright">
 		<div class="container">
 			<div class="footer__inner">
 				<div class="footer__block">
@@ -347,7 +374,7 @@
 		<!-- Copyright -->
 
 
-		<div class="copyright">
+		<div class="copyright" id="copyright">
 			<div class="container">
 				<div class="copyright__text">
 					<div>Copyright © 2015 ActiveBox. All Rights Reserved</div> <div>Made with Y <span>by Kamal Chaneman</span></div>
@@ -357,5 +384,7 @@
 	</footer>
 
 
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+	<script src="js/core.js"></script>
 </body>
 </html>

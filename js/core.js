@@ -1,9 +1,72 @@
-menu.onclick = function myFunction () {
-	 var x = document.getElementById('myTopnav');
 
-	 if (x.className === "topnav") {
-	 	x.className += " responsive";
-	 } else {
-	 	x.className = "topnav";
-	 }
-}
+
+$(function() {
+	
+	let header = $("#header");
+	let intro = $("#intro");
+	let introH = intro.innerHeight();
+	let scrollPos = $(window).scrollTop();
+	let nav = $("#nav")
+	let navToggle = $("#navToggle")
+
+	checkScroll(scrollPos, introH);
+
+	$(window).on("scroll resize", function() {
+
+		let introH = intro.innerHeight();
+		scrollPos = $(this).scrollTop();
+
+		checkScroll(scrollPos, introH);
+
+	});
+
+	function checkScroll() {
+		if( scrollPos > introH)  {
+			header.addClass("fixed");
+		} else {
+			header.removeClass("fixed");
+		}
+	}
+
+
+
+	$("[data-scroll]").on("click", function(event) { 
+		event.preventDefault();
+
+		let elementID = $(this).data('scroll');
+		let elementOffset = $(elementID).offset().top;
+
+		nav.removeClass("show");
+
+		$("html, body").animate ({
+			scrollTop: elementOffset -80
+		}, 550)
+
+	});
+
+
+	// Nav Toggle 
+
+
+	navToggle.on("click", function(event) {
+		event.preventDefault();
+
+		nav.toggleClass("show");
+	})
+
+
+	// Reviews 
+	
+
+	let slider = $("#reviewsSlider");
+
+	slider.slick({
+		ifinite: true,
+		sliderToShow: 1,
+		slideToScroll: 1,
+		fade: true,
+		arrows: false,
+		dots: true
+	});
+
+});

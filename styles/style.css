@@ -37,8 +37,20 @@ h1,h2,h3,h4,h5,h6 {
 	height: 100px;
 }
 
+.header.fixed {
+	background: #2f324b;
+	opacity: .9;
+	position: fixed;
+	height: auto;
+}
+
+.header.fixed .active__box {
+	border-bottom: none;
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
 .active__box {
-	border-bottom: 1px solid grey;
 	display: flex;
 	justify-content: space-between;
 	padding: 35px 4px;
@@ -374,6 +386,15 @@ h1,h2,h3,h4,h5,h6 {
 	flex-wrap: wrap;
 }
 
+.reviews__slider {
+	height: 500px;
+	overflow: hidden;
+}
+
+.reviews__slider.slick-initialized {
+	height: auto;
+}
+
 .reviews__photo {
 	width: 50%;
 	position: relative;
@@ -412,6 +433,42 @@ h1,h2,h3,h4,h5,h6 {
 	font-weight: 700;
 }
 
+.slick-dots {
+	display: flex;
+	justify-content: center;
+	margin: 0;
+	padding: 0 0 10px;
+	list-style: none;
+	width: 50%;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	z-index: 2;
+}
+
+.slick-dots li {
+	margin: 0 5px;
+}
+
+.slick-dots button {
+	width: 14px;
+	height: 14px;
+	background: #fff;
+	border: 0;
+	border-radius: 50%;
+	padding: 0;
+	font-size: 0;
+	color: transparent;
+	cursor: pointer;
+}
+
+.slick-dots button:focus {
+	outline: 0;
+}
+
+.slick-dots .slick-active button {
+	opacity: 1;
+}
 
 /* Download
 **************** */
@@ -546,8 +603,27 @@ h1,h2,h3,h4,h5,h6 {
 @media (max-width: 991px) {
 
 	/* Nav ======*/
+
+
 	.nav {
 		display: none;
+		flex-direction: column;
+		text-align: right;
+		position: absolute;
+		top: 100%;
+		right: 0;
+		background-color: #2f324b;
+		width: 100%;
+
+	}
+
+	.nav.show {
+		display: flex;
+	}
+
+	.nav__link {
+		padding: 9px 15px;
+		margin-left: 0;
 	}
 
 	/* Burger =======*/
@@ -705,6 +781,9 @@ h1,h2,h3,h4,h5,h6 {
 	.reviews__img {
 		right: -100px;
 	}
+
+
+
 }
 
 
